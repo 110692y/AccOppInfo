@@ -1,0 +1,35 @@
+<apex:page StandardController="Opportunity" extensions="Actrlr">
+    <apex:form>
+        <table width="100%">
+            <tr>
+                <td width="33%"> </td>
+                <td width="33%">
+                    <center>
+                    <apex:pageBlock title="Choose Account: " id="list">
+
+                        <apex:selectList size="1" value="{!accListItem}">
+                            <apex:selectOptions value="{!accList}"></apex:selectOptions>
+                        </apex:selectList><br/><br/>
+
+                        <apex:commandButton value="Get Opportunities List" action="{!refresh}" rerender="list"/><br/> <br/>
+
+                        <h1>List of Related Opps: </h1>
+                        <hr></hr>
+                        <apex:pageBlockTable value="{!oppList}" var="opp">
+                            <apex:column>
+                                <apex:outputLink value="{!URLFOR($Page.OppInfoPage, null, [id=opp.Id])}"
+                                                 target="_parent">Open Opp
+                                </apex:outputLink>
+                            </apex:column>
+                            <apex:column value="{!opp.Name}"/>
+                            <apex:column value="{!opp.Id}"/>
+                        </apex:pageBlockTable>
+
+                    </apex:pageBlock>
+                    </center>
+                </td>
+                <td width="33%"></td>
+            </tr>
+        </table>
+    </apex:form>
+</apex:page>

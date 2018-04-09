@@ -1,0 +1,36 @@
+<apex:page StandardController="Opportunity" extensions="OppInfoPageCtrlr">
+
+    <style>
+       table, tr, td {border: 1px solid #000088;padding:10px;border-collapse: collapse;background-color: #a5eff4;}
+       body {background-color: #EEEEFF; }
+       border-width: 3px;}
+    </style>
+
+    <body><br/>
+
+        <center> <br/> Welcome to <b>Opportunity Info Page</b>. <br/>
+            <br/> Here is Info: <br/> <br/>
+        </center>
+
+        <table align="center" width="22%">
+            <tr>
+                <td width="40%"><b>Name:</b></td>
+                <td width="40%">{!Opportunity.Name} </td>
+            </tr>
+            <tr>
+                <td><b>Id:</b></td>
+                <td> {!Opportunity.Id} </td>
+            </tr>
+            <tr>
+                <td><b>Account:</b></td>
+                <td> {!acc.Name} </td>
+            </tr>
+        </table>
+        <br/>
+
+        <center><apex:outputLink value="ActrlrPage" target="_blank">
+                <apex:image url="https://www.logoground.com/uploads/201566162015-11-024705887wolf-and-fox.jpg" width="300"></apex:image><br/>
+            </apex:outputLink> <br/><br/> <p> Click on Image to back to Account choice </p></center>
+
+    </body>
+</apex:page>
